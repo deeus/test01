@@ -1,0 +1,24 @@
+
+#postdate{
+	margin-right : 10px;
+	margin-left : 5px;
+}
+
+#postauthor{
+	margin-right : 5px;
+	margin-left : 10px;
+}
+
+#postmessage{
+	margin-right : 5px;
+	margin-left : 20px;
+}
+.fa-comments-o{
+	margin-right:5px;
+}
+.fa-envelope-o {
+	margin-right:5px;
+}
+#nocomments{
+	color : #DDDDDD;
+}
