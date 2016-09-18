@@ -8,8 +8,8 @@
 		$('#addPost').removeAttr( 'disabled');
 		$('.form-horisontal').data('bootstrapValidator').resetForm(); //Сброс валидации
 		$('.alert').hide(); //Скрытие активных уведомлений
-		$("#responseLoginSpan").text("");
-		$("#responseLoginSpan").text("");
+		$("#responseLoginSpan").empty();
+		$("#responseEmailSpan").empty();
 	};
 	function responseLogin(){ //Проверка на уникальность логина
         var reglogin = document.registerForm.reglogin.value;
@@ -253,8 +253,9 @@ $( document ).ready(function() {
 									$('.alert-success').fadeIn(500); //сообщение об успешной регистрации
 									$('#add_user_button').removeAttr( 'disabled'); //разблокировка кнопки
 									$('#registerForm').data('bootstrapValidator').resetForm();//сброс валидации
-									$('#registerForm').trigger( 'reset' );
-									//сброс формы
+									$('#registerForm').trigger( 'reset' );//сброс формы
+									$("#responseLoginSpan").empty();
+									$("#responseEmailSpan").empty();
 								}
 							});								
 				};	
