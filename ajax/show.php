@@ -1,6 +1,7 @@
 <?php
 	//Отображение нового сообщения (обработчик)
 header('Content-type: text/html; charset=utf-8');
+include('../include/db_connect.php');
 //	$author_login = $_POST['author_login'];
 	$author_fio = $_POST['author_fio'];
 	$message = $_POST['msgtext'];

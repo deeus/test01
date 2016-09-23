@@ -7,12 +7,12 @@
     # Если переменные существуют, то добавляем в БД нового пользователя
     if((isset($_POST['t_fio'])) && (isset($_POST['t_email'])) && (isset($_POST['t_login'])) && (isset($_POST['t_password'])) && (isset($_POST['t_country'])) && (isset($_POST['t_phone'])) )
     {
-		$t_fio = $_POST['t_fio'];
-		$t_email = $_POST['t_email'];
-        $t_login = $_POST['t_login'];
-		$t_password = $_POST['t_password'];
-		$t_country = $_POST['t_country'];
-		$t_phone = $_POST['t_phone'];
+		$t_fio = mysql_real_escape_string ($_POST['t_fio']);
+		$t_email = mysql_real_escape_string ($_POST['t_email']);
+        $t_login = mysql_real_escape_string ($_POST['t_login']);
+		$t_password = mysql_real_escape_string ($_POST['t_password']);
+		$t_country = mysql_real_escape_string ($_POST['t_country']);
+		$t_phone = mysql_real_escape_string ($_POST['t_phone']);
 
         mysql_query("INSERT INTO `users` (
 				fio,

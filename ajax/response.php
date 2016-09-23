@@ -8,7 +8,7 @@
 	switch ($_POST['action'])  {
 		case "login";
 		# проверяем, не сущестует ли пользователя с таким логином
-		$query = mysql_query("SELECT COUNT(id) FROM `users` WHERE `login`='".$_POST['login']."'");
+		$query = mysql_query("SELECT COUNT(id) FROM `users` WHERE `login`='".mysql_real_escape_string ($_POST['login'])."'");
 		$row = mysql_fetch_array($query);
 		if($row['COUNT(id)'] > 0){
 			echo "on";
@@ -19,7 +19,7 @@
 		
 		case "email";		
 		# проверяем, не сущестует ли пользователя с таким email
-		$query = mysql_query("SELECT COUNT(id) FROM `users` WHERE `email`='".$_POST['email']."'");
+		$query = mysql_query("SELECT COUNT(id) FROM `users` WHERE `email`='".mysql_real_escape_string ($_POST['email'])."'");
 		$row = mysql_fetch_array($query);
 		if($row['COUNT(id)'] > 0){
 			echo "on";

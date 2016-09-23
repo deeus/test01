@@ -8,8 +8,8 @@
 	
 	if (isset($_POST['login']) && isset($_POST['password']))
 	{
-		$login = $_POST['login'];
-		$password = $_POST['password'];
+		$login = mysql_real_escape_string ($_POST['login']);
+		$password = mysql_real_escape_string ($_POST['password']);
 
 		// делаем запрос к БД
 		// и ищем юзера с таким логином и паролем

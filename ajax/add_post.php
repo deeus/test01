@@ -7,9 +7,9 @@
 //Добавление комментария(поста)
     if ( (isset($_POST['author_login'])) && (isset($_POST['author_fio'])) && (isset($_POST['msgtext'])) ) //Проверка на существование переменных
     {
-		$author_login = $_POST['author_login']; 
-		$author_fio = $_POST['author_fio'];
-		$message = $_POST['msgtext'];
+		$author_login = mysql_real_escape_string ($_POST['author_login']); 
+		$author_fio = mysql_real_escape_string ($_POST['author_fio']);
+		$message = mysql_real_escape_string ($_POST['msgtext']);
 		$t_date = date("Y-m-d", time());
 		$t_time = date("H:i:s", time());
 
